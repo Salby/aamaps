@@ -70,6 +70,16 @@
     </div>
     <!-- Map end -->
 
+    <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      }).catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
+    </script>
+
     <script>
       var openSearchButton = document.querySelector('.search__toggle[data-opensearch]');
       var closeSearchButton = document.querySelector('.search__toggle[data-closesearch]');
