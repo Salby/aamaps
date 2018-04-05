@@ -25,8 +25,8 @@
   <body>
 
     <!-- Loading screen start -->
-    <div id="loading" style="display:none">
-      <img src="assets/img/icon.png" alt="aalborgmaps_logo">
+    <div id="loading">
+      <img src="assets/img/icon256.png" alt="aalborgmaps_logo">
       <p>Aalborg Maps</p>
       <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
         <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
@@ -112,6 +112,14 @@
       }
     </script>
     <script type="text/javascript">
+      function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading');
+        loadingScreen.classList.add('fadeOut');
+        setTimeout(function() {
+          loadingScreen.remove();
+        }, 300);
+      }
+
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -352,6 +360,11 @@
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
+        });
+
+        map.addListener('tilesloaded', function() {
+          console.log('Loaded');
+          hideLoadingScreen();
         });
 
         var markers = [];

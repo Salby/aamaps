@@ -376,6 +376,9 @@ body {
   background-color: var(--primary--1);
   z-index: 999;
 }
+#loading.fadeOut {
+  animation: fade-out 300ms forwards;
+}
 #loading img {
   width: 112px;
 }
@@ -383,6 +386,10 @@ body {
   color: var(--light--4);
   font-size: 24px;
   margin-bottom: 2em;
+}
+@keyframes fade-out {
+  from { opacity: 1 }
+  to { opacity: 0 }
 }
 
 .spinner {
