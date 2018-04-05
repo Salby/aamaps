@@ -65,11 +65,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: var(--header-height);
+  height: calc(var(--header-height) + env(safe-area-inset-top));
   background-color: var(--primary--1);
   box-shadow: var(--shadow--2);
   z-index: 4;
-  padding-top: env(safe-area-inset-top);
 }
 .header__row {
   position: relative;
