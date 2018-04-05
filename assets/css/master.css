@@ -70,7 +70,6 @@ body {
   box-shadow: var(--shadow--2);
   z-index: 4;
   padding-top: env(safe-area-inset-top);
-  padding-bottom: calc(env(safe-area-inset-bottom) * 1.5)
 }
 .header__row {
   position: relative;
