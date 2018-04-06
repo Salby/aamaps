@@ -130,9 +130,8 @@
         }
       }
 
-      if (navigator.onLine) {
+      if (navigator.onLine == false) {
         alert('Hello');
-      } else {
         var loading = document.getElementById('loading');
         loading.style.display = 'none';
       }
