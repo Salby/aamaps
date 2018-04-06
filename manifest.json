@@ -21,6 +21,10 @@
       "src": "assets/img/icon256.png",
         "sizes": "256x256",
         "type": "image/png"
+    }, {
+      "src": "assets/img/icon512.png",
+        "sizes": "512x512",
+        "type": "image/png"
     }],
   "start_url": "/aamaps/index.html",
   "display": "standalone",
