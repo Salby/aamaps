@@ -117,10 +117,12 @@
     <script type="text/javascript">
       function hideLoadingScreen() {
         const loadingScreen = document.getElementById('loading');
-        loadingScreen.classList.add('fadeOut');
-        setTimeout(function() {
-          loadingScreen.remove();
-        }, 300);
+        if (loadingScreen) {
+          loadingScreen.classList.add('fadeOut');
+          setTimeout(function() {
+            loadingScreen.remove();
+          }, 300);
+        }
       }
 
       var map, infoWindow;
