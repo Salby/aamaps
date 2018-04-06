@@ -4,7 +4,7 @@ const filesToCache = [
   'assets/css/master.css',
   'index.html',
   'offline.html',
-  'assets/img/icon256.png'
+  'assets/img/icon256.png',
   'assets/img/mapFallback.png',
   'assets/img/mapFallback.webp'
 ];
