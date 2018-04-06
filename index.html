@@ -71,7 +71,7 @@
     <!-- Service worker registration start -->
     <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/aamaps/service-worker.js').then(function(registration) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
         console.log('Registration successful, scope is:', registration.scope);
       }).catch(function(error) {
         console.log('Service worker registration failed, error:', error);
@@ -367,7 +367,6 @@
         });
 
         map.addListener('tilesloaded', function() {
-          console.log('Map loaded successfully');
           hideLoadingScreen();
         });
 
