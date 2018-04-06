@@ -5,6 +5,8 @@ const filesToCache = [
   'index.html',
   'offline.html',
   'assets/img/icon256.png'
+  'assets/img/mapFallback.png',
+  'assets/img/mapFallback.webp'
 ];
 
 self.addEventListener('install', function(event) {
@@ -31,7 +33,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     }).catch(function() {
-      return caches.match('offline.html');
+      return caches.match('index.html');
     })
   );
 });
