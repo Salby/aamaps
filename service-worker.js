@@ -4,7 +4,7 @@ const filesToCache = [
   'assets/css/master.css',
   'index.html',
   'assets/img/icon256.png'
-]
+];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -30,7 +30,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     }).catch(function() {
-      return caches.match('/index.html');
+      return caches.match('index.html');
     })
   );
 });
