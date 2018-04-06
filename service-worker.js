@@ -1,5 +1,5 @@
-var cacheName = 'aamaps';
-var filesToCache = [
+const cacheName = 'aamaps';
+const filesToCache = [
   'https://fonts.googleapis.com/css?family=Cabin:400,500',
   'assets/css/master.css',
   'index.html',
@@ -37,15 +37,15 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
-self.addEventListener('fetch', function(event) {
-  event.responsWith(
-    caches.open(cacheName).then(function(cache) {
-      return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request).then(function(response) {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
-});
+// self.addEventListener('fetch', function(event) {
+//   event.responsWith(
+//     caches.open(cacheName).then(function(cache) {
+//       return cache.match(event.request).then(function (response) {
+//         return response || fetch(event.request).then(function(response) {
+//           cache.put(event.request, response.clone());
+//           return response;
+//         });
+//       });
+//     })
+//   );
+// });
