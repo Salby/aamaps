@@ -311,7 +311,7 @@
               "elementType": "geometry.fill",
               "stylers": [
                 {
-                  "color": "#7d8ab8"
+                  "color": "#acb7dd"
                 }
               ]
             },
@@ -328,15 +328,15 @@
         });
         infoWindow = new google.maps.InfoWindow;
 
-        // var techcollegeLatLng = {lat: 57.048015, lng: 9.966527}
-        // var marker = new google.maps.Marker({
-        //   position: techcollegeLatLng,
-        //   map: map,
-        //   title: 'TECHCOLLEGE'
-        // })
+        var techcollegeLatLng = {lat: 57.048015, lng: 9.966527}
+        var marker = new google.maps.Marker({
+          position: techcollegeLatLng,
+          map: map,
+          title: 'TECHCOLLEGE'
+        })
 
         // Try HTML5 geolocation.
-        /*if (navigator.geolocation) {
+        if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
@@ -353,12 +353,11 @@
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
-        }*/
+        }
 
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
-        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
