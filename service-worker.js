@@ -1,5 +1,5 @@
-const cacheName = 'aamaps';
-const filesToCache = [
+var cacheName = 'aamaps';
+var filesToCache = [
   'https://fonts.googleapis.com/css?family=Cabin:400,500',
   'assets/css/master.css',
   'index.html',
