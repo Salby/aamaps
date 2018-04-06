@@ -1,4 +1,10 @@
 const cacheName = 'aamaps';
+const filesToCache = [
+  'https://fonts.googleapis.com/css?family=Cabin:400,500',
+  'assets/css/master.css',
+  'index.html',
+  'assets/img/icon256.png'
+]
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -29,6 +35,8 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
+    }).catch(function() {
+      return caches.match('/index.html');
     })
   );
 });
