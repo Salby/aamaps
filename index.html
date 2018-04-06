@@ -28,8 +28,8 @@
     <div id="loading">
       <img src="assets/img/icon256.png" alt="aalborgmaps_logo">
       <p>Aalborg Maps</p>
-      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      <svg class="spinner">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
       </svg>
     </div>
     <!-- Loading screen end -->
@@ -70,6 +70,7 @@
     </div>
     <!-- Map end -->
 
+    <!-- Service worker registration start -->
     <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
@@ -79,7 +80,9 @@
       });
     }
     </script>
+    <!-- Service worker registration end -->
 
+    <!-- Header search script start -->
     <script>
       var openSearchButton = document.querySelector('.search__toggle[data-opensearch]');
       var closeSearchButton = document.querySelector('.search__toggle[data-closesearch]');
@@ -111,6 +114,8 @@
         input.value = '';
       }
     </script>
+    <!-- Header search script end -->
+
     <script type="text/javascript">
       function hideLoadingScreen() {
         const loadingScreen = document.getElementById('loading');
@@ -363,7 +368,7 @@
         });
 
         map.addListener('tilesloaded', function() {
-          console.log('Loaded');
+          console.log('Map loaded successfully');
           hideLoadingScreen();
         });
 
