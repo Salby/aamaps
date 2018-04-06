@@ -1,11 +1,11 @@
 const cacheName = 'aamaps';
 const filesToCache = [
-  '/aamaps/https://fonts.googleapis.com/css?family=Cabin:400,500',
-  '/aamaps/assets/css/master.css',
-  '/aamaps/index.html',
-  '/aamaps/assets/img/icon256.png',
-  '/aamaps/assets/img/mapFallback.png',
-  '/aamaps/assets/img/mapFallback.webp'
+  'https://fonts.googleapis.com/css?family=Cabin:400,500',
+  'assets/css/master.css',
+  'index.html',
+  'assets/img/icon256.png',
+  'assets/img/mapFallback.png',
+  'assets/img/mapFallback.webp'
 ];
 
 self.addEventListener('install', function(event) {
