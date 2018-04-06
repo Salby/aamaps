@@ -5,6 +5,8 @@ const filesToCache = [
   'index.html',
   'offline.html',
   'assets/img/icon256.png'
+  'assets/img/mapFallback.png',
+  'assets/img/mapFallback.webp'
 ];
 
 self.addEventListener('install', function(event) {
