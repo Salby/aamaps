@@ -15,7 +15,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll(filesToCache);
     })
   )
-})
+});
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -48,4 +48,4 @@ self.addEventListener('fetch', function(event) {
       });
     })
   );
-})
+});
