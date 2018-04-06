@@ -24,6 +24,14 @@
   </head>
   <body>
 
+    <div id="loading"><!-- Loading screen start -->
+      <img src="assets/img/icon256.png" alt="aalborgmaps_logo">
+      <p>Aalborg Maps</p>
+      <svg class="spinner">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </div><!-- Loading screen end -->
+
     <!-- Header start -->
     <header class="header__log">
       <div class="header__row">
@@ -58,6 +66,19 @@
     <div id="map" style="display:flex;flex-direction:column;justify-content:center;align-items:center">
       <h1>You are offline.</h1>
     </div>
+
+    <script type="text/javascript">
+      var loadingScreen = document.getElementById('#loading');
+      window.onload = hideLoadingScreen(loadingScreen);
+      function hideLoadingScreen(elem) {
+        if (elem) {
+          elem.classList.add('fadeOut');
+          setTimeout(function() {
+            elem.remove();
+          }, 300);
+        }
+      }
+    </script>
 
     <!-- Service worker registration start -->
     <script type="text/javascript">
