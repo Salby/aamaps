@@ -3,6 +3,7 @@ const filesToCache = [
   'https://fonts.googleapis.com/css?family=Cabin:400,500',
   'assets/css/master.css',
   'index.html',
+  'offline.html',
   'assets/img/icon256.png'
 ];
 
@@ -30,7 +31,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     }).catch(function() {
-      return caches.match('index.html');
+      return caches.match('/offline.html');
     })
   );
 });

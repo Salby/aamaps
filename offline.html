@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#182865">
+    <!-- Wepapp manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Add to homescreen for Safari & iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aalborg Maps">
+    <link rel="apple-touch-icon" href="assets/img/appleicon152.png">
+    <!-- Add to homescreen for Windows -->
+    <meta name="msapplication-TileImage" content="assets/img/icon144.png">
+    <meta name="msapplication-TileColor" content="#182865">
+    <!-- Page title -->
+    <title>Aalborg Maps</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/master.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:400,500">
+  </head>
+  <body>
+
+    <!-- Header start -->
+    <header class="header__log">
+      <div class="header__row">
+        <h1 class="header__logo">Aalborg Maps</h1>
+        <!--<ul class="row__list--right">
+          <li>
+            <button class="search__toggle" data-opensearch="search">
+              <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <div class="search__container" id="search">
+              <div class="search__input-card">
+                <input id="pac-input" class="search__input" type="text" name="search" placeholder="Søg..." />
+                <button class="search__toggle" data-closesearch="search">
+                  <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>-->
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Service worker registration start -->
+    <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/aamaps/service-worker.js').then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      }).catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
+    </script>
+    <!-- Service worker registration end -->
+
+  </body>
+</html>
